@@ -11,7 +11,7 @@ export class WeatherService {
   favoritedCities=this.favSource.asObservable();
 
   tempunits:string;
-  apiKey= 'fc0c4e1ec49d0c022df6519574a1a2ca';
+  apiKey= '24b8020dc520a4858959d863c3406698';
 
   constructor(public http: HttpClient) { }
   
