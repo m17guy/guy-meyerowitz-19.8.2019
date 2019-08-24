@@ -1,0 +1,27 @@
+<div class="form-group">
+    <h3>
+        city: <input type="text" [(ngModel)]="city" placeholder="name of city" (keyup.enter)="submit();">
+        <button name="Scity" (click)="submit();">Go</button><br>
+        <span>
+            switch temperature units to:<button (click)="changeunit()">°{{unitsInUse}}</button>
+            <br>
+            <span>{{ifstaredthenUN}}</span>favorite this city: <button class="glyphicon glyphicon-star{{staricon}}" (click)="starME(true);"></button>
+        </span>
+    </h3>
+</div>
+<div class="container" style="border: 2px solid black;">
+<div style="border:2px solid  black; width: 20%; background-color:ivory;">
+        <h2>City: {{myweather.cityname}} , {{myweather.country}}</h2>
+        <h2>Temp: {{myweather.temp}}°{{unitsInUse}}</h2>
+        <img src="http://openweathermap.org/img/wn/{{myweather.icon}}@2x.png">
+        <h2>{{myweather.weatherkind}}</h2>
+        <h3>humidity: {{myweather.humidity}}%</h3>
+</div>
+<h1 style="text-align: center; font-size: 4em;">{{myweather.cityname}} forecast:</h1>
+<div style="border:2px solid  black; width: 19.5%; display: inline-block; background-color:ivory" *ngFor="let day of cityforecast">
+        <h2>date: {{day.date}}</h2>
+        <h2>Temp: {{day.temp}}°{{unitsInUse}}</h2>
+        <div class="img"><img src="http://openweathermap.org/img/wn/{{day.icon}}.png"></div>
+        <h2>Weather description:<br> {{day.description}}</h2>
+</div>
+</div>

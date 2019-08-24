@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <h1>find out what the weather is like all arond the world</h1>
+    <ul class="navbar-nav">
+        <button class="btn btn-primary" (click)="switchpage(true)">home</button> |
+        <button class="btn btn-primary" (click)="switchpage(false)">favorites</button>
+    </ul>
+</nav>
+<app-home *ngIf="onhome" [fromFavCity]="gotFavCity"></app-home>
+<app-favorites *ngIf="!onhome" (sendevent)="receivFav($event)"></app-favorites>
